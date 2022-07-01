@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Student {
     private final long id;
@@ -34,5 +35,13 @@ public class Student {
             total += grade;
         }
         return total / grades.size();
+    }
+
+    public void updateGrade(int index, int grade){
+        this.grades.set(index, grade);
+    }
+
+    public void deleteGrade(int index){
+        this.grades.remove(index);
     }
 }

@@ -54,4 +54,18 @@ public class StudentTest {
         this.students.get(0).addGrades(90);
         assertEquals(90.0,this.students.get(0).getGradeAverage(),0);
     }
+
+    @Test
+    public void testUpdateGrade(){
+        this.students.get(0).addGrades(90);
+        this.students.get(0).updateGrade(0, 95);
+        assertEquals(this.students.get(0).getGrades().get(0), this.students.get(0).getGrades().get(0));
+    }
+    @Test
+    public void testDeleteGrade(){
+        this.students.get(0).addGrades(95);
+        assertEquals(1,this.students.get(0).grades.size());
+        this.students.get(0).deleteGrade(0);
+        assertEquals(0,this.students.get(0).grades.size());
+    }
 }
